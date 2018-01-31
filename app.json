@@ -1,11 +1,31 @@
 {
   "pages": [
+    "pages/market/index",
+    "pages/fav/index",
     "pages/index/index"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "我的区块链",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "my block chain",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#333333"
+  },
+  "tabBar": {
+    "color": "#ececec",
+    "backgroundColor": "#333333",
+    "selectedColor": "#4A90E2",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "关注"
+      },
+      {
+        "pagePath": "pages/market/index",
+        "text": "市场"
+      },
+      {
+        "pagePath": "pages/fav/index",
+        "text": "配置"
+      }
+    ]
   }
 }

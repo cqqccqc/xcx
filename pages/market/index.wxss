@@ -1,0 +1,46 @@
+/* pages/market/index.wxss */
+#market-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.market-section {
+  display: flex;
+  flex-direction: row;
+  background-color: #333;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.market-section-item {
+  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+  flex: 1;
+}
+
+.market-section-item-cur {
+  color: #4a90e2;
+}
+
+.market-section-bar {
+  display: flex;
+}
+
+.market-section-bar-item {
+  height: 1px;
+  flex: 1;
+}
+
+.market-section-bar-item-cur {
+  border-top: 2px solid #4a90e2;
+}
+
+#market-swiper {
+  flex: 1
+}
+
+.market-scroll-view {
+  height: 100%;
+}

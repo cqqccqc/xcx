@@ -1,0 +1,50 @@
+<!--pages/market/index.wxml-->
+<view id='market-root'>
+
+  <view class="market-section">
+    <view class="market-section-item market-section-item-cur">USDT</view>
+    <view class="market-section-item">BTC</view>
+    <view class="market-section-item">ETH</view>
+  </view>
+  <view class='market-section-bar'>
+    <view class="market-section-bar-item market-section-bar-item-cur"></view>
+    <view class="market-section-bar-item"></view>
+    <view class="market-section-bar-item"></view>
+  </view>
+  <swiper id='market-swiper' scroll-y='true'>
+    <swiper-item>
+      <scroll-view class='market-scroll-view' scroll-y>
+        <view style='height:100px;background-color:red'>
+          123
+        </view>
+        <view style='height:100px;background-color:red'>
+          123
+        </view>
+        <view style='height:100px;background-color:red'>
+          123
+        </view>
+        <view style='height:100px;background-color:red'>
+          123
+        </view>
+        <view style='height:100px;background-color:red'>
+          123
+        </view>
+        <view style='height:100px;background-color:red'>
+          123
+        </view>
+        <view style='height:100px;background-color:red'>
+          123
+        </view>
+        <view style='height:100px;background-color:red'>
+          123
+        </view>
+        <view style='height:100px;background-color:red'>
+          123
+        </view>
+        <view style='height:100px;background-color:red'>
+          123
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
