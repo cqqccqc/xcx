@@ -30,10 +30,32 @@ App({
         let text = pako.inflate(res.data, {
           to: 'string'
         });
-        console.log(JSON.parse(text))
 
-      })
+        try {
+          let respObj = JSON.parse(text);
+          console.log(respObj);
+          // heart beat
+          if (respObj.ping) {
+            self.socketTask.send({
+              data: JSON.stringify({ "pong": respObj.ping })
+            });
+          }
+        } catch (e) {
+
+        }
+
+      });
+
+      self.socketTask.onClose((errMsg) => {
+        debugger
+        console.log(errMsg)
+      });
+      self.socketTask.onError((errMsg) => {
+        debugger
+        console.log(errMsg)
+      });
     });
+
   },
 
   /**
