@@ -1,4 +1,5 @@
 // pages/market/index.js
+import { usdt } from '../../common/coins.js';
 Page({
 
   /**
@@ -12,14 +13,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.fetchUsdt();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setScrollViewHeight();
+
   },
 
   /**
@@ -64,13 +65,11 @@ Page({
 
   },
 
-  setScrollViewHeight: function () {
-    wx.getSystemInfo({
-      success: function (res) {
-        console.log(res.windowHeight)
-        const scrollViewHeight = res.windowHeight - 30;
-        wx.qu
-      }
-    })
+  fetchUsdt: function () {
+    const self = this;
+    const app = getApp();
+    console.log(app);
+    
+    
   }
 })

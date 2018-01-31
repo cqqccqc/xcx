@@ -1,4 +1,7 @@
 import pako from './lib/pako.min.js'
+
+import { usdt } from './common/coins.js'
+
 const WS_URL = 'wss://api.huobi.pro/ws';
 
 App({
@@ -8,24 +11,27 @@ App({
    */
   onLaunch: function (options) {
     const self = this;
-    self.soketTask = wx.connectSocket({
+    self.socketTask = wx.connectSocket({
       url: WS_URL
     });
-    self.soketTask.onOpen(() => {
+    self.socketTask.onOpen(() => {
       console.log('WebSocket连接已打开！');
 
-      self.soketTask.send({
-        data: JSON.stringify({
-          "req": "market.btcusdt.kline.1min",
-          "id": "id10"
-        })
-      });
-      self.soketTask.onMessage((res) => {
+      usdt.forEach((item, index) => {
+        self.socketTask.send({
+          data: JSON.stringify({
+            "sub": "market." + item + "usdt.kline.1min",
+            "id": "usdt" + item
+          })
+        });
+      })
+
+      self.socketTask.onMessage((res) => {
         let text = pako.inflate(res.data, {
           to: 'string'
         });
         console.log(JSON.parse(text))
-        
+
       })
     });
   },
